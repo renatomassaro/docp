@@ -13,7 +13,9 @@ defmodule Docp.Mixfile do
       deps: deps(),
       aliases: aliases(),
       compilers: Mix.compilers(),
-      elixirc_paths: elixirc_paths(Mix.env())
+      elixirc_paths: elixirc_paths(Mix.env()),
+      source_url: "https://github.com/renatomassaro/docp",
+      docs: docs()
     ]
   end
 
@@ -25,24 +27,24 @@ defmodule Docp.Mixfile do
 
   defp description do
     """
-    TODO
+    Document private functions (sparingly).
     """
   end
 
   defp package do
     [
-      files: ["lib", "mix.exs", "README.md", "LICENSE.md"],
       maintainers: ["Renato Massaro"],
       licenses: ["MIT"],
       links: %{
-        Changelog: "todo",
-        GitHub: "todo"
+        GitHub: "https://github.com/renatomassaro/docp"
       }
     ]
   end
 
   def deps do
-    []
+    [
+      {:ex_doc, "~> 0.14", only: :dev, runtime: false}
+    ]
   end
 
   # Specifies which paths to compile per environment
@@ -51,5 +53,11 @@ defmodule Docp.Mixfile do
 
   defp aliases do
     []
+  end
+
+  defp docs do
+    [
+      main: "Docp"
+    ]
   end
 end

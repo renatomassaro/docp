@@ -1,7 +1,8 @@
 defmodule Docp do
-  @moduledoc """
-  TODO
-  """
+  @moduledoc "README.md"
+             |> File.read!()
+             |> String.split("<!-- MDOC !-->")
+             |> Enum.at(1)
 
   defmacro __using__(_) do
     quote do
