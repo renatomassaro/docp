@@ -10,6 +10,11 @@ You shouldn't, but you can.
 defmodule MyModule do
   use Docp
 
+  @typedocp """
+  Valid range for priorities is `1..99`.
+  """
+  @typep priority :: pos_integer
+
   @docp """
   Does something
   """
@@ -17,7 +22,7 @@ defmodule MyModule do
 end
 ```
 
-Docp will ensure that the Elixir compiler doesn't raise a warning about `@docp` being unused.
+Docp will ensure that the Elixir compiler doesn't raise a warning about `@docp` or `@typedocp` being unused.
 
 ## When to use this library
 

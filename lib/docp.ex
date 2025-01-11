@@ -12,8 +12,9 @@ defmodule Docp do
 
   defmacro __before_compile__(_env) do
     quote do
-      # This ensures that the compiler won't raise a warning that `@docp` is unused
-      @docp
+      # Ensures that the compiler won't raise a warning about `@docp` or `@typedocp` being unused
+      @typedocp ""
+      @docp ""
     end
   end
 end
